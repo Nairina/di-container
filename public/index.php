@@ -1,11 +1,10 @@
 <?php
 require __DIR__.'/../vendor/autoload.php';
 
-require __DIR__ . '/../vendor/autoload.php';
 
 use App\Container;
 
-// ✨ Тестові сервіси
+
 class Logger
 {
     public function __construct(public string $file)
@@ -39,7 +38,7 @@ $dic->register('userService', fn($c) => new UserService(
 $u1 = $dic->get('userService');
 $u2 = $dic->get('userService');
 
-echo "<h1>DI Container works 🎉</h1>";
+echo "<h1>DI Container works </h1>";
 echo "<p>userService #1 id: " . spl_object_id($u1) . "</p>";
 echo "<p>userService #2 id: " . spl_object_id($u2) . "</p>";
 echo "<p>Are they the same? " . ($u1 === $u2 ? "YES ✅" : "NO ❌") . "</p>";
